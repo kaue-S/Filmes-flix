@@ -9,6 +9,8 @@ import {
   View,
 } from "react-native";
 import logo from "./assets/images/logotipo.png";
+import { Ionicons } from "@expo/vector-icons";
+import { Fontisto } from "@expo/vector-icons";
 
 export default function App() {
   return (
@@ -22,11 +24,17 @@ export default function App() {
 
         <View style={estilos.viewBotoes}>
           <Pressable style={estilos.botao}>
-            <Text style={estilos.textoBotao}>Buscar Filmes</Text>
+            <Text style={estilos.textoBotao}>
+              <Ionicons name="search" size={24} color="black" />
+              Buscar Filmes
+            </Text>
           </Pressable>
 
           <Pressable style={estilos.botao}>
-            <Text style={estilos.textoBotao}>Favoritos</Text>
+            <Text style={estilos.textoBotao}>
+              <Fontisto name="favorite" size={24} color="black" />
+              Favoritos
+            </Text>
           </Pressable>
         </View>
 
@@ -67,8 +75,9 @@ const estilos = StyleSheet.create({
   },
 
   botao: {
+    borderRadius: 5,
     padding: 16,
-    backgroundColor: "linear-gradient(273deg, #966c3b, #d5c096)",
+    backgroundColor: "gold",
   },
 
   textoBotao: {},

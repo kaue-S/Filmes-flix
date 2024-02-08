@@ -1,30 +1,25 @@
 {
   "expo": {
-    "name": "Filmes-flix",
+    "name": "Filmes Flix",
     "slug": "Filmes-flix",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/images/logotipo.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/images/logotipo.ong",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#00000"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/adaptive-logotipo.png",
+        "backgroundColor": "#00000"
       }
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
     }
   }
 }

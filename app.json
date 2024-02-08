@@ -7,7 +7,7 @@
     "icon": "./assets/images/logotipo.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/images/logotipo.ong",
+      "image": "./assets/images/splash-dahora.png",
       "resizeMode": "contain",
       "backgroundColor": "#00000"
     },
@@ -17,7 +17,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-logotipo.png",
+        "foregroundImage": "./assets/logotipo.png",
         "backgroundColor": "#00000"
       }
     }

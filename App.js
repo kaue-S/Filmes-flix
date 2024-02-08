@@ -1,6 +1,7 @@
 import {
   Button,
   Image,
+  Pressable,
   SafeAreaView,
   StatusBar,
   StyleSheet,
@@ -18,10 +19,17 @@ export default function App() {
           <Image source={logo} style={estilos.logo} />
           <Text>Filmes Flix</Text>
         </View>
+
         <View style={estilos.viewBotoes}>
-          <Button title="Buscar Filmes" />
-          <Button title="Favoritos" />
+          <Pressable style={estilos.botao}>
+            <Text style={estilos.textoBotao}>Buscar Filmes</Text>
+          </Pressable>
+
+          <Pressable style={estilos.botao}>
+            <Text style={estilos.textoBotao}>Favoritos</Text>
+          </Pressable>
         </View>
+
         <View style={estilos.viewRodape}>
           <Button title="Privacidade" />
           <Button title="Sobre" />
@@ -34,14 +42,14 @@ export default function App() {
 const estilos = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "black",
+    backgroundColor: "rgb(31,30,27)",
     paddingLeft: 10,
     paddingRight: 10,
   },
 
   viewLogo: {
     flex: 1,
-    backgroundColor: "gray",
+    backgroundColor: "rgb(31,30,27)",
     justifyContent: "flex-end",
     alignItems: "center",
   },
@@ -55,9 +63,15 @@ const estilos = StyleSheet.create({
     flex: 1,
     justifyContent: "space-around",
     flexDirection: "row",
-    backgroundColor: "orange",
     alignItems: "baseline",
   },
+
+  botao: {
+    padding: 16,
+    backgroundColor: "linear-gradient(273deg, #966c3b, #d5c096)",
+  },
+
+  textoBotao: {},
 
   viewRodape: {
     justifyContent: "space-between",

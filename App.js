@@ -21,7 +21,7 @@ export default function App() {
           <Image source={logo} style={estilos.logo} />
           <Text>Filmes Flix</Text>
         </View>
-
+        
         <View style={estilos.viewBotoes}>
           <Pressable style={estilos.botao}>
             <Text style={estilos.textoBotao}>
@@ -29,7 +29,6 @@ export default function App() {
               Buscar Filmes
             </Text>
           </Pressable>
-
           <Pressable style={estilos.botao}>
             <Text style={estilos.textoBotao}>
               <Fontisto name="favorite" size={24} color="black" />

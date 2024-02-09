@@ -4,7 +4,7 @@
     "slug": "Filmes-flix",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/logotipo.png",
+    "icon": "./assets/images/logo.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/images/splash-dahora.png",
@@ -20,6 +20,7 @@
         "foregroundImage": "./assets/logotipo.png",
         "backgroundColor": "#00000"
       }
-    }
+    },
+    "plugins": ["expo-font"]
   }
 }

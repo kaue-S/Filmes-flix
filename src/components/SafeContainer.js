@@ -36,7 +36,5 @@ const estilos = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "rgb(31,30,27)",
-    paddingLeft: 10,
-    paddingRight: 10,
   },
 });

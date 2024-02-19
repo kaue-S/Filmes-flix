@@ -49,13 +49,13 @@ export default function App() {
         <View style={estilos.viewBotoes}>
           <Pressable style={estilos.botao}>
             <Text style={estilos.textoBotao}>
-              <Ionicons name="search" size={24} color="black" />
+              <Ionicons name="search" size={20} color="white" />
               Buscar Filmes
             </Text>
           </Pressable>
           <Pressable style={estilos.botao}>
             <Text style={estilos.textoBotao}>
-              <Fontisto name="favorite" size={24} color="black" />
+              <Fontisto name="favorite" size={20} color="white" />
               Favoritos
             </Text>
           </Pressable>

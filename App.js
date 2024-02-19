@@ -21,6 +21,7 @@ SplashScreen.preventAutoHideAsync();
 export default function App() {
   const [fontsLoaded, fontError] = useFonts({
     "Monoton-Regular": require("./assets/fonts/Monoton-Regular.ttf"),
+    NotoSans: require("./assets/fonts/NotoSans-VariableFont.ttf"),
   });
 
   /*Função atrelada ao hook usaCallback. Quando uma função está conectada ao useCallBack, garantimos que a referência dela é armazenada somente uma vez. */
@@ -78,7 +79,7 @@ const estilos = StyleSheet.create({
   },
 
   viewLogo: {
-    flex: 1,
+    flex: 2,
     backgroundColor: "rgb(31,30,27)",
     justifyContent: "flex-end",
     alignItems: "center",
@@ -107,10 +108,17 @@ const estilos = StyleSheet.create({
     borderRadius: 5,
     padding: 16,
     backgroundColor: "gold",
-    alignItems: "center",
+    justifyContent: "space-between",
   },
 
-  textoBotao: {},
+  textoBotao: {
+    alignItems: "center",
+    display: "flex",
+    fontFamily: "NotoSans",
+    color: "#fff",
+    fontWeight: "bold",
+    fontSize: 16,
+  },
 
   viewRodape: {
     justifyContent: "space-around",

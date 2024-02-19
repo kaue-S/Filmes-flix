@@ -21,6 +21,7 @@ SplashScreen.preventAutoHideAsync();
 export default function App() {
   const [fontsLoaded, fontError] = useFonts({
     "Monoton-Regular": require("./assets/fonts/Monoton-Regular.ttf"),
+    Mulish: require("./assets/fonts/Mulish-VariableFont_wght.ttf"),
     NotoSans: require("./assets/fonts/NotoSans-VariableFont.ttf"),
   });
 
@@ -49,21 +50,29 @@ export default function App() {
         <View style={estilos.viewBotoes}>
           <Pressable style={estilos.botao}>
             <Text style={estilos.textoBotao}>
-              <Ionicons name="search" size={20} color="white" />
-              Buscar Filmes
+              <Ionicons name="search" size={20} color="white" /> Buscar Filmes
             </Text>
           </Pressable>
           <Pressable style={estilos.botao}>
             <Text style={estilos.textoBotao}>
-              <Fontisto name="favorite" size={20} color="white" />
-              Favoritos
+              <Fontisto name="favorite" size={20} color="white" /> Favoritos
             </Text>
           </Pressable>
         </View>
 
         <View style={estilos.viewRodape}>
-          <Button title="Privacidade" />
-          <Button title="Sobre" />
+          <Pressable style={estilos.botaoRodape}>
+            <Text style={estilos.textoBotao}>
+              <Ionicons name="lock-closed" size={16} color={"white"} />{" "}
+              Privacidade
+            </Text>
+          </Pressable>
+          <Pressable style={estilos.botaoRodape}>
+            <Text style={estilos.textoBotao}>
+              <Ionicons name="information-circle" size={16} color={"white"} />{" "}
+              Sobre
+            </Text>
+          </Pressable>
         </View>
       </SafeAreaView>
     </>
@@ -107,14 +116,14 @@ const estilos = StyleSheet.create({
   botao: {
     borderRadius: 5,
     padding: 16,
-    backgroundColor: "gold",
+    backgroundColor: "purple",
     justifyContent: "space-between",
   },
 
   textoBotao: {
     alignItems: "center",
     display: "flex",
-    fontFamily: "NotoSans",
+    fontFamily: "Mulish",
     color: "#fff",
     fontWeight: "bold",
     fontSize: 16,
@@ -124,7 +133,9 @@ const estilos = StyleSheet.create({
     justifyContent: "space-around",
     alignItems: "center",
     flexDirection: "row",
-    backgroundColor: "red",
+    backgroundColor: "purple",
     flex: 0.2,
   },
+
+  botaoRodape: {},
 });

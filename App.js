@@ -11,37 +11,17 @@ import {
 import logo from "./assets/images/logotipo.png";
 import { Ionicons } from "@expo/vector-icons";
 import { Fontisto } from "@expo/vector-icons";
-import { useFonts } from "expo-font";
-import * as SplashScreen from "expo-splash-screen";
-import { useCallback } from "react";
+import SafeContainer from "./src/components/SafeContainer";
 
 /* manter a tela splash visível enquanto não programarmos a ação de ocultar */
-SplashScreen.preventAutoHideAsync();
 
 export default function App() {
-  const [fontsLoaded, fontError] = useFonts({
-    "Monoton-Regular": require("./assets/fonts/Monoton-Regular.ttf"),
-    Mulish: require("./assets/fonts/Mulish-VariableFont_wght.ttf"),
-    NotoSans: require("./assets/fonts/NotoSans-VariableFont.ttf"),
-  });
-
   /*Função atrelada ao hook usaCallback. Quando uma função está conectada ao useCallBack, garantimos que a referência dela é armazenada somente uma vez. */
-  const aoAtualizarLayout = useCallback(async () => {
-    /*Se estiver tudo ok com o carregamento */
-    if (fontsLoaded || fontError) {
-      /*Escondemos a splashscreen */
-      await SplashScreen.hideAsync();
-    }
-  }, [fontsLoaded, fontError]);
-
-  if (!fontsLoaded && !fontError) {
-    return null;
-  }
 
   return (
     <>
       <StatusBar barStyle="light-content" />
-      <SafeAreaView style={estilos.container} onLayout={aoAtualizarLayout}>
+      <SafeContainer>
         <View style={estilos.viewLogo}>
           <Image source={logo} style={estilos.logo} />
           <Text style={estilos.titulo}> Filmes Flix</Text>
@@ -50,12 +30,12 @@ export default function App() {
         <View style={estilos.viewBotoes}>
           <Pressable style={estilos.botao}>
             <Text style={estilos.textoBotao}>
-              <Ionicons name="search" size={20} color="white" /> Buscar Filmes
+              <Ionicons name="search" size={18} color="white" /> Buscar Filmes
             </Text>
           </Pressable>
           <Pressable style={estilos.botao}>
             <Text style={estilos.textoBotao}>
-              <Fontisto name="favorite" size={20} color="white" /> Favoritos
+              <Fontisto name="favorite" size={16} color="white" /> Favoritos
             </Text>
           </Pressable>
         </View>
@@ -74,19 +54,12 @@ export default function App() {
             </Text>
           </Pressable>
         </View>
-      </SafeAreaView>
+      </SafeContainer>
     </>
   );
 }
 
 const estilos = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "rgb(31,30,27)",
-    paddingLeft: 10,
-    paddingRight: 10,
-  },
-
   viewLogo: {
     flex: 2,
     backgroundColor: "rgb(31,30,27)",

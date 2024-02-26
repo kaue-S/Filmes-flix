@@ -2,6 +2,12 @@
 
 App nativo multiplataforma criado com React Native e expo.
 
+## Branch 03
+
+- Criação das telas básicas: sobre e privacidade.
+- Componente `ScrollView` para contaúdos maiores que a tela com suporte à rolagem
+- Componente `Linking` para criação de link para a web.
+
 ## Dica
 
 Instale a extensão **ES7+ React...** no vscode para facilitar a programação de componentes.

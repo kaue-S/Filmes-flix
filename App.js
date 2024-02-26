@@ -5,6 +5,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Sobre from "./src/screens/Sobre";
 import Privacidade from "./src/screens/Privacidade";
+import BuscarFilmes from "./src/screens/BuscarFilmes";
 
 const Stack = createNativeStackNavigator();
 
@@ -20,6 +21,12 @@ export default function App() {
             headerTintColor: "white",
           }}
         >
+          <Stack.Screen
+            name="Buscar Filmes"
+            component={BuscarFilmes}
+            options={{ title: "Qual filme deseja encontrar?" }}
+          />
+
           <Stack.Screen
             name="Home"
             component={Home}

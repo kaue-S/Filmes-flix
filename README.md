@@ -2,6 +2,26 @@
 
 App nativo multiplataforma criado com React Native e expo.
 
+# Branch 04
+
+Para genrenciar ps recursos de navegação é necessário usar uma biblioteca de navegação.
+
+As mais cinhecidas são a **React Navigation** e a **Expo Router**.
+
+Atualmente a biblioteca mais usada e considerada padrão é a **react navigator**.
+
+### Como usar o React navigator com navegação Stack
+
+#### Pacotes de instalação
+
+React Navigation: `npm install @react-navigation/native`
+
+Dependências para navegação:
+
+`npx expo install react-native-screens react-native-safe-area-context`
+
+Mecanismo de navegação: `npm install @react-navigation/native-stack`
+
 ## Branch 03
 
 - Criação das telas básicas: sobre e privacidade.

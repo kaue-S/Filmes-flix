@@ -4,8 +4,9 @@ import SafeContainer from "../components/SafeContainer";
 import logo from "../../assets/images/logotipo.png";
 import { Ionicons } from "@expo/vector-icons";
 import { Fontisto } from "@expo/vector-icons";
+import Privacidade from "./Privacidade";
 
-export default function Home() {
+export default function Home({ navigation }) {
   return (
     <SafeContainer>
       <View style={estilos.viewLogo}>
@@ -27,13 +28,19 @@ export default function Home() {
       </View>
 
       <View style={estilos.viewRodape}>
-        <Pressable style={estilos.botaoRodape}>
+        <Pressable
+          style={estilos.botaoRodape}
+          onPress={() => navigation.navigate("Privacidade")}
+        >
           <Text style={estilos.textoBotao}>
             <Ionicons name="lock-closed" size={16} color={"white"} />{" "}
             Privacidade
           </Text>
         </Pressable>
-        <Pressable style={estilos.botaoRodape}>
+        <Pressable
+          style={estilos.botaoRodape}
+          onPress={() => navigation.navigate("Sobre")}
+        >
           <Text style={estilos.textoBotao}>
             <Ionicons name="information-circle" size={16} color={"white"} />{" "}
             Sobre
@@ -74,7 +81,7 @@ const estilos = StyleSheet.create({
   botao: {
     borderRadius: 5,
     padding: 16,
-    backgroundColor: "purple",
+    backgroundColor: "#5451a6",
     justifyContent: "space-between",
   },
 
@@ -91,7 +98,7 @@ const estilos = StyleSheet.create({
     justifyContent: "space-around",
     alignItems: "center",
     flexDirection: "row",
-    backgroundColor: "purple",
+    backgroundColor: "#5451a6",
     flex: 0.2,
   },
 });

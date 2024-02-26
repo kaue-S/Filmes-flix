@@ -6,15 +6,23 @@ import {
   TextInput,
   Alert,
 } from "react-native";
-import SafeContainer from "../components/SafeContainer";
 import { Feather } from "@expo/vector-icons";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import SafeContainer from "../components/SafeContainer";
 
 export default function BuscarFilmes() {
-  const [filme, setFilme] = useState("");
+  
+  const [campoBusca, setcampoBusca] = useState("");
 
-  const handleChangeText = (novoFilme) => {
-    setFilme(novoFilme);
+  const handleChange = (event) => {
+    setcampoBusca(event);
+  };
+
+  const submit = () =>{
+    if(campoBusca === ""){
+      Alert.alert("Ops!", "Você precisa digitar o título!",);
+      return;
+    }
   };
 
   return (
@@ -24,20 +32,20 @@ export default function BuscarFilmes() {
           Star Trek? O poderoso Chefão? A trilogia Senhos dos Anéis?
         </Text>
         <Text style={estilos.texto}>
-          Localiza um filme que você viu ou gostaria de ver!
+          Localize um filme que você viu ou gostaria de ver!
         </Text>
       </View>
       <View style={estilos.campoBusca}>
-        <Feather name="film" size={24} color="#5451a6" />
+        <Feather name="film" size={48} color="#5451a6" />
         <TextInput
           style={estilos.input}
-          onChange={handleChangeText}
-          placeholder=" Digite o título"
-          value={filme}
+          placeholder="  Digite o título"
+          placeholderTextColor={"white"}
+          onChange={handleChange}
         />
       </View>
-      c
-      <Pressable style={estilos.botao} onPress={buscarFilme}>
+      
+      <Pressable style={estilos.botao} onPress={submit} android_ripple={{ color: 'rgba(0, 0, 0, 0.1)'}}>
         <Text style={estilos.textoBotao}>PROCURAR</Text>
       </Pressable>
     </SafeContainer>
@@ -45,31 +53,44 @@ export default function BuscarFilmes() {
 }
 
 const estilos = StyleSheet.create({
+  container: {
+    paddingVertical: 8,
+  },
+
   campoBusca: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
     gap: 15,
     marginVertical: 13,
+    marginHorizontal: 8,
   },
 
   input: {
+    borderRadius: 8,
     borderWidth: 1,
     borderColor: "#5451a6",
-    width: 300,
+    flex: 1,
+    paddingVertical: 8,
+    paddingHorizontal: 10,
+    color: "white",
   },
 
   texto: {
-    marginVertical: 8,
+    marginVertical: 15,
+    color: "white",
+    marginHorizontal: 8,
   },
 
   botao: {
     borderWidth: 1,
     alignItems: "center",
-    paddingVertical: 5,
+    paddingVertical: 10,
+    marginHorizontal: 8,
     borderColor: "#5451a6",
     backgroundColor: "#5451a6",
     color: "#fffff",
+    borderRadius: 8,
   },
 
   textoBotao: {

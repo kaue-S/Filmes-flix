@@ -35,6 +35,7 @@ export default function SafeContainer({ children }) {
 const estilos = StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: 8,
+    backgroundColor: "rgb(31,30,27)",
+
   },
 });

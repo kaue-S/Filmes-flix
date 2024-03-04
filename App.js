@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Sobre from "./src/screens/Sobre";
 import Privacidade from "./src/screens/Privacidade";
 import BuscarFilmes from "./src/screens/BuscarFilmes";
+import Resultados from "./src/screens/Resultados";
 
 const Stack = createNativeStackNavigator();
 
@@ -38,6 +39,7 @@ export default function App() {
             component={Sobre}
             options={{ title: "Conheça nosso App" }}
           />
+          <Stack.Screen name="Resultados" component={Resultados} />
         </Stack.Navigator>
       </NavigationContainer>
     </>

@@ -8,22 +8,25 @@ import {
   Vibration,
 } from "react-native";
 import { Feather } from "@expo/vector-icons";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import SafeContainer from "../components/SafeContainer";
 
-export default function BuscarFilmes() {
-  const [campoBusca, setcampoBusca] = useState("");
+export default function BuscarFilmes({ navigation }) {
+  const [filme, setfilme] = useState("");
 
   const filmeDigitado = (valorDigitado) => {
-    setcampoBusca(valorDigitado);
+    setfilme(valorDigitado);
   };
 
   const buscarfilme = () => {
-    if (campoBusca === "") {
+    if (filme === "") {
       Vibration.vibrate(300);
       Alert.alert("Ops!", "Você precisa digitar o título!");
       return;
     }
+
+    /* Redirecionamento para tela de resultados passando o filme para ela */
+    navigation.navigate("Resultados", { filme });
   };
 
   return (
@@ -45,7 +48,7 @@ export default function BuscarFilmes() {
           maxLength={40}
           autoFocus
           onSubmitEditing={BuscarFilmes}
-          onChange={filmeDigitado}
+          onChangeText={filmeDigitado}
         />
       </View>
 

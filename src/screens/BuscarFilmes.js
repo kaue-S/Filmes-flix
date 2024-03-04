@@ -5,22 +5,23 @@ import {
   Pressable,
   TextInput,
   Alert,
+  Vibration,
 } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import React, { useEffect, useState } from "react";
 import SafeContainer from "../components/SafeContainer";
 
 export default function BuscarFilmes() {
-  
   const [campoBusca, setcampoBusca] = useState("");
 
-  const handleChange = (event) => {
-    setcampoBusca(event);
+  const filmeDigitado = (valorDigitado) => {
+    setcampoBusca(valorDigitado);
   };
 
-  const submit = () =>{
-    if(campoBusca === ""){
-      Alert.alert("Ops!", "Você precisa digitar o título!",);
+  const buscarfilme = () => {
+    if (campoBusca === "") {
+      Vibration.vibrate(300);
+      Alert.alert("Ops!", "Você precisa digitar o título!");
       return;
     }
   };
@@ -41,11 +42,18 @@ export default function BuscarFilmes() {
           style={estilos.input}
           placeholder="  Digite o título"
           placeholderTextColor={"white"}
-          onChange={handleChange}
+          maxLength={40}
+          autoFocus
+          onSubmitEditing={BuscarFilmes}
+          onChange={filmeDigitado}
         />
       </View>
-      
-      <Pressable style={estilos.botao} onPress={submit} android_ripple={{ color: 'rgba(0, 0, 0, 0.1)'}}>
+
+      <Pressable
+        style={estilos.botao}
+        onPress={buscarfilme}
+        android_ripple={{ color: "rgba(0, 0, 0, 0.1)" }}
+      >
         <Text style={estilos.textoBotao}>PROCURAR</Text>
       </Pressable>
     </SafeContainer>
@@ -59,7 +67,6 @@ const estilos = StyleSheet.create({
 
   campoBusca: {
     flexDirection: "row",
-    alignItems: "center",
     justifyContent: "center",
     gap: 15,
     marginVertical: 13,

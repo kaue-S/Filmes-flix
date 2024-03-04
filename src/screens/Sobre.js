@@ -61,8 +61,8 @@ const estilos = StyleSheet.create({
   subtitulo: {
     fontFamily: "Mulish",
     fontWeight: "bold",
-    marginVertical: 30,
-    fontSize: 18,
+    marginBottom: 25,
+    fontSize: 22,
   },
   texto: {
     marginVertical: 8,

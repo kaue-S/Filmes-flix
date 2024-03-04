@@ -2,7 +2,14 @@
 
 App nativo multiplataforma criado com React Native e expo.
 
-# Branch 04
+## Branch 05
+
+- Componentes/Recursos nativos: `TextInput`, ` Vibration`, e `Alert`
+- Eventos: `onChangeText` no `TextInput` para captura em tempo real do nome do filme digitado e atualização no `state`.
+- `onPress` no `button` para acionamento da função `buscarFilmes`
+- `onSubmitEditing` no `TextInput` para acionamento da função `buscarFilmes`
+
+## Branch 04
 
 Para genrenciar ps recursos de navegação é necessário usar uma biblioteca de navegação.
 

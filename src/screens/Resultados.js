@@ -16,10 +16,10 @@ export default function Resultados({ route }) {
             include_adult: false,
             language: "pt-BR",
             query: filme,
-            api_Key: apiKey,
+            api_key: apiKey,
           },
         });
-        console.log(resposta.data);
+        console.log(resposta.data.results);
       } catch (error) {
         console.error("Deu ruim: " + error.message);
       }

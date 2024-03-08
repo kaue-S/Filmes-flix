@@ -2,6 +2,17 @@
 
 App nativo multiplataforma criado com React Native e expo.
 
+## Branch 06
+
+- Cadastro na PI TheMovieDB
+- Criação de uma chavr de API (API Key)
+- Configuração de variável ambiente através do arquivo `.env` contendo a API Key via Expo. (Arquivo ENV são ignorados no versionamento)
+
+### Consumo de dados da API
+
+- instalação da lib **AXIOS**
+- COnfiguração do `Services/api-moviedb.js` contendo a programação básica de acesso à API para uso em diferentes partes do app.
+
 ## Branch 05
 
 - Componentes/Recursos nativos: `TextInput`, ` Vibration`, e `Alert`

@@ -89,8 +89,6 @@ const estilos = StyleSheet.create({
   },
 
   textoBotao: {
-    alignItems: "center",
-    display: "flex",
     fontFamily: "Mulish",
     color: "#fff",
     fontWeight: "bold",
@@ -98,10 +96,11 @@ const estilos = StyleSheet.create({
   },
 
   viewRodape: {
-    justifyContent: "space-around",
+    justifyContent: "space-between",
     alignItems: "center",
     flexDirection: "row",
     backgroundColor: "#5451a6",
     flex: 0.2,
+    paddingHorizontal: 20,
   },
 });

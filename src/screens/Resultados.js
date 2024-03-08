@@ -1,13 +1,21 @@
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import {
+  ActivityIndicator,
+  FlatList,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import CardFilme from "../components/CardFilme";
 import SafeContainer from "../components/SafeContainer";
 import { api, apiKey } from "../services/api-moviedb";
 import { useEffect, useState } from "react";
 import Separador from "../components/Separador";
 import NaoLocalizado from "../components/NaoLocalizado";
+import Loading from "../components/Loading";
 
 export default function Resultados({ route }) {
   const [resultados, setResultados] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const { filme } = route.params;
 
@@ -24,6 +32,8 @@ export default function Resultados({ route }) {
         });
 
         setResultados(resposta.data.results);
+
+        setLoading(false);
       } catch (error) {
         console.error("Deu ruim: " + error.message);
       }
@@ -36,17 +46,21 @@ export default function Resultados({ route }) {
       <View style={estilos.subContainer}>
         <Text style={estilos.texto}>Você buscou por: {filme}</Text>
 
-        <View style={estilos.viewFilmes}>
-          <FlatList
-            data={resultados}
-            keyExtractor={(item) => item.id}
-            renderItem={({ item }) => {
-              return <CardFilme filme={item} />;
-            }}
-            ListEmptyComponent={NaoLocalizado}
-            ItemSeparatorComponent={Separador}
-          />
-        </View>
+        {loading && <Loading />}
+
+        {!loading && (
+          <View style={estilos.viewFilmes}>
+            <FlatList
+              data={resultados}
+              keyExtractor={(item) => item.id}
+              renderItem={({ item }) => {
+                return <CardFilme filme={item} />;
+              }}
+              ListEmptyComponent={NaoLocalizado}
+              ItemSeparatorComponent={Separador}
+            />
+          </View>
+        )}
       </View>
     </SafeContainer>
   );

@@ -16,6 +16,7 @@ const estilos = StyleSheet.create({
     color: "red",
     fontSize: 40,
     textAlign: "center",
+    fontWeight: "bold",
   },
 
   imagem: {

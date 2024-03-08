@@ -3,6 +3,8 @@ import CardFilme from "../components/CardFilme";
 import SafeContainer from "../components/SafeContainer";
 import { api, apiKey } from "../services/api-moviedb";
 import { useEffect, useState } from "react";
+import Separador from "../components/Separador";
+import NaoLocalizado from "../components/NaoLocalizado";
 
 export default function Resultados({ route }) {
   const [resultados, setResultados] = useState([]);
@@ -36,14 +38,13 @@ export default function Resultados({ route }) {
 
         <View style={estilos.viewFilmes}>
           <FlatList
-            //prop data apontando para o state contendo os dados para a FlatList
             data={resultados}
-            //extraindo cada registro único
             keyExtractor={(item) => item.id}
-            //prop que renderiza cada filme em um componente
             renderItem={({ item }) => {
               return <CardFilme filme={item} />;
             }}
+            ListEmptyComponent={NaoLocalizado}
+            ItemSeparatorComponent={Separador}
           />
         </View>
       </View>

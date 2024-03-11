@@ -1,5 +1,7 @@
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import imagemAlternativa from "../../assets/images/foto-alternativa.jpg";
+import { FontAwesome5 } from "@expo/vector-icons";
+import { Fontisto } from "@expo/vector-icons";
 import React from "react";
 
 export default function CardFilme({ filme }) {
@@ -9,16 +11,26 @@ export default function CardFilme({ filme }) {
     <View style={estilos.card}>
       <Image
         style={estilos.imagem}
-        source={{ uri: `https://image.tmdb.org/t/p/w500/${poster_path}` }}
+        source={
+          poster_path
+            ? { uri: `https://image.tmdb.org/t/p/w500/${poster_path}` }
+            : imagemAlternativa
+        }
       />
       <View style={estilos.corpo}>
         <Text style={estilos.titulo}> {title}</Text>
         <View style={estilos.botoes}>
           <Pressable style={estilos.botao}>
-            <Text style={estilos.textoBotao}>Leia mais</Text>
+            <Text style={estilos.textoBotao}>
+              <FontAwesome5 name="book-open" size={12} color="black" /> Leia
+              mais
+            </Text>
           </Pressable>
           <Pressable style={estilos.botao}>
-            <Text style={estilos.textoBotao}>Salvar</Text>
+            <Text style={estilos.textoBotao}>
+              {" "}
+              <Fontisto name="favorite" size={12} color="black" /> Salvar
+            </Text>
           </Pressable>
         </View>
       </View>
@@ -35,6 +47,7 @@ const estilos = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    marginBottom: 20,
   },
 
   imagem: {

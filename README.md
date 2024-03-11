@@ -2,6 +2,11 @@
 
 App nativo multiplataforma criado com React Native e expo.
 
+## branch 07 melhorias nos resultados
+
+- Loading usando `ActivityIndicator`
+- Em `Resultados`, aplicamos a `Flatlist` componentes personalizados para o caso de não haver filmes na busca (`NaoEncontrado/ListEmptyComponent`) e para separar cada elemento da `Flatlist` (`Separador/ITemSeparatorComponent`)
+
 ## Branch 06
 
 - Cadastro na PI TheMovieDB

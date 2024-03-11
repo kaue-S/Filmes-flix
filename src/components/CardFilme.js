@@ -3,9 +3,12 @@ import imagemAlternativa from "../../assets/images/foto-alternativa.jpg";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { Fontisto } from "@expo/vector-icons";
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
 
 export default function CardFilme({ filme }) {
   const { title, poster_path } = filme;
+
+  const navigation = useNavigation();
 
   return (
     <View style={estilos.card}>
@@ -20,7 +23,10 @@ export default function CardFilme({ filme }) {
       <View style={estilos.corpo}>
         <Text style={estilos.titulo}> {title}</Text>
         <View style={estilos.botoes}>
-          <Pressable style={estilos.botao}>
+          <Pressable
+            style={estilos.botao}
+            onPress={() => navigation.navigate("Detalhes")}
+          >
             <Text style={estilos.textoBotao}>
               <FontAwesome5 name="book-open" size={12} color="black" /> Leia
               mais

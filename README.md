@@ -2,7 +2,12 @@
 
 App nativo multiplataforma criado com React Native e expo.
 
-## branch 07 melhorias nos resultados
+## Branch 08 tela de detalhes
+
+- Criação da tela `Detalhes` e adição dela à `Stack` em `App.js`
+- Em `CardFilme` utilização do hook `useNavigation` para funcionalidade de navegação do botão **Leia mais**
+
+## Branch 07 melhorias nos resultados
 
 - Loading usando `ActivityIndicator`
 - Em `Resultados`, aplicamos a `Flatlist` componentes personalizados para o caso de não haver filmes na busca (`NaoEncontrado/ListEmptyComponent`) e para separar cada elemento da `Flatlist` (`Separador/ITemSeparatorComponent`)

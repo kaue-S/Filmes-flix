@@ -4,6 +4,7 @@ import SafeContainer from "../components/SafeContainer";
 import logo from "../../assets/images/logotipo.png";
 import { Ionicons } from "@expo/vector-icons";
 import { Fontisto } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
 import Privacidade from "./Privacidade";
 
 export default function Home({ navigation }) {
@@ -25,7 +26,7 @@ export default function Home({ navigation }) {
         </Pressable>
         <Pressable style={estilos.botao}>
           <Text style={estilos.textoBotao}>
-            <Fontisto name="favorite" size={16} color="white" /> Favoritos
+            <AntDesign name="heart" size={16} color="white" /> Favoritos
           </Text>
         </Pressable>
       </View>

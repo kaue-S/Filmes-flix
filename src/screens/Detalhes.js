@@ -8,22 +8,42 @@ import {
 import React from "react";
 import SafeContainer from "../components/SafeContainer";
 import imagemAlternativa from "../../assets/images/foto-alternativa.jpg";
+import notaArredondada from "../Lib/funcoes";
 
-export default function Detalhes() {
+export default function Detalhes({ route }) {
+  const { filme } = route.params;
+  const { title, backdrop_path, overview, vote_average, release_date } = filme;
+
   return (
     <SafeContainer>
       <View style={estilos.subContainer}>
-        <ImageBackground style={estilos.imagemFundo} source={imagemAlternativa}>
-          <Text style={estilos.titulo}>Título do filme...</Text>
+        <ImageBackground
+          style={estilos.imagemFundo}
+          source={{ uri: `https://image.tmdb.org/t/p/w500/${backdrop_path}` }}
+        >
+          <Text style={estilos.titulo}>{title}</Text>
         </ImageBackground>
 
         <View style={estilos.conteudo}>
           <ScrollView>
             <View style={estilos.infos}>
-              <Text style={estilos.texto}>Nota: </Text>
-              <Text style={estilos.texto}>Lançamento: </Text>
+              <Text style={estilos.texto}>
+                ⭐ {notaArredondada(vote_average)}
+              </Text>
+
+              <Text style={estilos.texto}>
+                📅{" "}
+                {`${new Date(filme.release_date).toLocaleString("pt-BR", {
+                  year: "numeric",
+                  day: "2-digit",
+                  month: "numeric",
+                })}`}
+              </Text>
             </View>
-            <Text style={[estilos.texto, estilos.sinopse]}>Sinopse: </Text>
+            <View style={estilos.sinopse}>
+              <Text style={estilos.subtitulo}>Sinopse:</Text>
+              <Text style={estilos.overview}>{overview}</Text>
+            </View>
           </ScrollView>
         </View>
       </View>
@@ -54,6 +74,18 @@ const estilos = StyleSheet.create({
     fontWeight: "bold",
   },
 
+  subtitulo: {
+    fontWeight: "bold",
+    fontSize: 16,
+    marginBottom: 15,
+  },
+
+  overview: {
+    textAlign: "justify",
+    paddingRight: 16,
+    fontSize: 16,
+  },
+
   conteudo: {
     flex: 1,
   },
@@ -71,7 +103,6 @@ const estilos = StyleSheet.create({
 
   sinopse: {
     marginVertical: 15,
-    fontWeight: "bold",
     paddingLeft: 16,
   },
 });

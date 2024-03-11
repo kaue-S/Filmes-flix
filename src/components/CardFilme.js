@@ -6,7 +6,7 @@ import React from "react";
 import { useNavigation } from "@react-navigation/native";
 
 export default function CardFilme({ filme }) {
-  const { title, poster_path } = filme;
+  const { title, poster_path, id } = filme;
 
   const navigation = useNavigation();
 
@@ -25,7 +25,7 @@ export default function CardFilme({ filme }) {
         <View style={estilos.botoes}>
           <Pressable
             style={estilos.botao}
-            onPress={() => navigation.navigate("Detalhes")}
+            onPress={() => navigation.navigate("Detalhes", { filme })}
           >
             <Text style={estilos.textoBotao}>
               <FontAwesome5 name="book-open" size={12} color="black" /> Leia

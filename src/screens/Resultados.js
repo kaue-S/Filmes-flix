@@ -67,7 +67,10 @@ export default function Resultados({ route }) {
 }
 
 const estilos = StyleSheet.create({
-  viewFilmes: { marginVertical: 8 },
+  viewFilmes: {
+    marginVertical: 8,
+  },
+
   subContainer: {
     flex: 1,
     padding: 16,

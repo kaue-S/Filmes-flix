@@ -42,7 +42,6 @@ export default function CardFilme({ filme }) {
       </View>
     </View>
   );
-  r;
 }
 
 const estilos = StyleSheet.create({

@@ -3,7 +3,6 @@ import { StyleSheet, Text, View, Image, Pressable } from "react-native";
 import SafeContainer from "../components/SafeContainer";
 import logo from "../../assets/images/logotipo.png";
 import { Ionicons } from "@expo/vector-icons";
-import { Fontisto } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import Privacidade from "./Privacidade";
 

@@ -92,7 +92,7 @@ export default function Privacidade() {
 const estilos = StyleSheet.create({
   subcontainer: {
     backgroundColor: "white",
-    padding: 8,
+    padding: 16,
   },
   titulo: {
     fontWeight: "bold",
@@ -106,5 +106,7 @@ const estilos = StyleSheet.create({
   },
   texto: {
     marginVertical: 8,
+    textAlign: "justify",
+    
   },
 });

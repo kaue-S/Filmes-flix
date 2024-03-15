@@ -24,7 +24,7 @@ export default function Home({ navigation }) {
           </Text>
         </Pressable>
         <Pressable style={estilos.botao}>
-          <Text style={estilos.textoBotao}>
+          <Text style={estilos.textoBotao} onPress={() => navigation.navigate("Favoritos")}>
             <AntDesign name="heart" size={16} color="white" /> Favoritos
           </Text>
         </Pressable>

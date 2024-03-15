@@ -1,4 +1,12 @@
-import { Image, Pressable, StyleSheet, Text, View, Vibration } from "react-native";
+import {
+  Image,
+  Pressable,
+  StyleSheet,
+  Text,
+  View,
+  Vibration,
+  Alert,
+} from "react-native";
 import imagemAlternativa from "../../assets/images/foto-alternativa.jpg";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { Fontisto } from "@expo/vector-icons";

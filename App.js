@@ -20,7 +20,7 @@ export default function App() {
         <Stack.Navigator
           initialRouteName="Home"
           screenOptions={{
-            headerStyle: { backgroundColor: "5451a6" },
+            headerStyle: { backgroundColor: "#5451a6" },
             headerTintColor: "white",
           }}
         >
@@ -47,17 +47,20 @@ export default function App() {
           <Stack.Screen name="Resultados" component={Resultados} />
           <Stack.Screen name="Favoritos" component={Favoritos} />
 
-          <Stack.Screen name="Detalhes" component={Detalhes} options={({navigation}) => {
-            return {
-              headerRight: () => (
-                <Button
-                 color="black"
-                 onPress={() => navigation.navigate("Home")}
-                 title="Home"
-                />
-              ),
-            };
-          }}
+          <Stack.Screen
+            name="Detalhes"
+            component={Detalhes}
+            options={({ navigation }) => {
+              return {
+                headerRight: () => (
+                  <Button
+                    color="#5451a6"
+                    onPress={() => navigation.navigate("Home")}
+                    title="Home"
+                  />
+                ),
+              };
+            }}
           />
         </Stack.Navigator>
       </NavigationContainer>

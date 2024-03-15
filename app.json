@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Filmes Flix",
-    "slug": "Filmes-flix",
+    "slug": "filmes-flix",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/logo.png",
@@ -11,7 +11,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#00000"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
@@ -19,8 +21,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/logotipo.png",
         "backgroundColor": "#00000"
+      },
+      "package": "com.kaueacenar.filmesflix"
+    },
+    "plugins": [
+      "expo-font"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "566291b0-2d5a-47f9-bf85-1fbee91ca116"
       }
     },
-    "plugins": ["expo-font"]
+    "owner": "kaueacenar"
   }
 }

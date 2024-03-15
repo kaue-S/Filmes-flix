@@ -38,8 +38,26 @@ export default function Favoritos({ navigation }) {
     carregarFavoritos();
   }, []);
 
-  // Log no state
-  console.log(listaFavoritos);
+  const excluirTodosFavoritos = async () => {
+    Alert.alert(
+      "Excluir todos?",
+      "Tem certeza que deseja excluir TODOS os favoritos",
+      [
+        { text: "Cancelar", style: "red" },
+        {
+          text: "Continuar",
+          style: "destructive",
+          onPress: async () => {
+            //Remover o storage de favoritos
+            await AsyncStorage.removeItem("@favoritosdahora");
+
+            //Atualizando o state para que sejam removidos da tela
+            setListaFavoritos([]);
+          },
+        },
+      ]
+    );
+  };
 
   return (
     <SafeContainer>
@@ -47,7 +65,10 @@ export default function Favoritos({ navigation }) {
         <View style={estilos.viewFavoritos}>
           <Text style={estilos.texto}>Quantidade: {listaFavoritos.length}</Text>
 
-          <Pressable style={estilos.botaoExcluirFavoritos}>
+          <Pressable
+            onPress={excluirTodosFavoritos}
+            style={estilos.botaoExcluirFavoritos}
+          >
             <Text style={estilos.textoBotao}>
               <Ionicons name="trash-outline" size={16} /> Excluir favoritos
             </Text>

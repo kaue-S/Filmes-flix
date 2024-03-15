@@ -7,7 +7,7 @@
     "icon": "./assets/images/logo.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/images/splash-dahora.png",
+      "image": "./assets/images/novo-splash.jpg",
       "resizeMode": "contain",
       "backgroundColor": "#00000"
     },

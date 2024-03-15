@@ -59,20 +59,46 @@ export default function Favoritos({ navigation }) {
     );
   };
 
+  const excluir = async (filmeId) => {
+    Alert.alert("Excluir", "Tem certeza que deseja excluir este filme? ", [
+      { text: "cancelar", style: "red" },
+      {
+        Text: "Excluir",
+        style: "destructive",
+        onPress: async () => {
+          const novaListaFavoritos = listaFavoritos.filter(
+            (filme) => filme.id !== filmeId
+          );
+
+          setListaFavoritos(novaListaFavoritos);
+
+          await AsyncStorage.setItem(
+            "@favoritosdahora",
+            JSON.stringify(novaListaFavoritos)
+          );
+        },
+      },
+    ]);
+  };
+
   return (
     <SafeContainer>
       <View style={estilos.subContainer}>
         <View style={estilos.viewFavoritos}>
           <Text style={estilos.texto}>Quantidade: {listaFavoritos.length}</Text>
 
-          <Pressable
-            onPress={excluirTodosFavoritos}
-            style={estilos.botaoExcluirFavoritos}
-          >
-            <Text style={estilos.textoBotao}>
-              <Ionicons name="trash-outline" size={16} /> Excluir favoritos
-            </Text>
-          </Pressable>
+          {listaFavoritos.length > 0 ? (
+            <Pressable
+              onPress={excluirTodosFavoritos}
+              style={estilos.botaoExcluirFavoritos}
+            >
+              <Text style={estilos.textoBotao}>
+                <Ionicons name="trash-outline" size={16} /> Excluir favoritos
+              </Text>
+            </Pressable>
+          ) : (
+            <Text>Lista Vazia</Text>
+          )}
         </View>
 
         <ScrollView showsVerticalScrollIndicator={false}>
@@ -87,7 +113,10 @@ export default function Favoritos({ navigation }) {
                 >
                   <Text style={estilos.titulo}>{filme.title}</Text>
                 </Pressable>
-                <Pressable style={estilos.botaoExcluir}>
+                <Pressable
+                  onPress={() => excluir(filme.id)}
+                  style={estilos.botaoExcluir}
+                >
                   <Ionicons name="trash" color="white" size={16} />
                 </Pressable>
               </View>

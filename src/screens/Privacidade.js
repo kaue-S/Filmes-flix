@@ -6,7 +6,7 @@ export default function Privacidade() {
   return (
     <SafeContainer>
       <View style={estilos.subcontainer}>
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
           <Text style={estilos.titulo}>
             Política de Privacidade para o app SEU APP
           </Text>

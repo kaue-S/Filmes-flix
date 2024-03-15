@@ -17,7 +17,7 @@ export default function Sobre() {
       <View style={estilos.subContainer}>
         <ScrollView>
           <Text style={estilos.subtitulo}>Sobre o app Filmes Flix</Text>
-          <Text>
+          <Text style={estilos.texto}>
             O <Text style={estilos.nomeApp}>Filmes Flix app</Text> é um
             aplicativo com a finalidade de permitir a busca por informações
             sobre filmes existentes na base de dados pública disponibilizada
@@ -66,6 +66,8 @@ const estilos = StyleSheet.create({
   },
   texto: {
     marginVertical: 8,
+    textAlign: "justify",
+    
   },
 
   nomeApp: {

@@ -1,17 +1,19 @@
 import { StyleSheet, Text, View, Image, Pressable } from "react-native";
 
 import SafeContainer from "../components/SafeContainer";
-import logo from "../../assets/images/logotipo.png";
+import logo from "../../assets/images/logo.png";
 import { Ionicons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
-import Privacidade from "./Privacidade";
 
 export default function Home({ navigation }) {
   return (
     <SafeContainer>
       <View style={estilos.viewLogo}>
+        <Text style={estilos.search}>
+          <Ionicons name="menu" size={30} color="white" />
+        </Text>
         <Image source={logo} style={estilos.logo} />
-        <Text style={estilos.titulo}> Filmes Flix</Text>
+        <Text style={estilos.search}> <Ionicons name="search" size={30} color="white" /></Text>
       </View>
 
       <View style={estilos.viewBotoes}>
@@ -56,22 +58,22 @@ export default function Home({ navigation }) {
 
 const estilos = StyleSheet.create({
   viewLogo: {
-    flex: 2,
-    backgroundColor: "rgb(31,30,27)",
+    flex: 1,
+    backgroundColor: "#252525",
     justifyContent: "flex-end",
-    alignItems: "center",
+    alignItems: "start",
     paddingBottom: 15,
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
+
+  search: {
+    paddingTop: 4,
+  },  
 
   logo: {
-    width: 250,
-    height: 250,
-  },
-
-  titulo: {
-    color: "white",
-    fontFamily: "Monoton-Regular",
-    fontSize: 36,
+    width: 150,
+    height: 60,
   },
 
   viewBotoes: {

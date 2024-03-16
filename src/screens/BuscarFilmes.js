@@ -33,14 +33,10 @@ export default function BuscarFilmes({ navigation }) {
     <SafeContainer>
       <View>
         <Text style={estilos.texto}>
-          Star Trek? O poderoso Chefão? A trilogia Senhos dos Anéis?
-        </Text>
-        <Text style={estilos.texto}>
           Localize um filme que você viu ou gostaria de ver!
         </Text>
       </View>
       <View style={estilos.campoBusca}>
-        <Feather name="film" size={48} color="#5451a6" />
         <TextInput
           style={estilos.input}
           placeholder="  Digite o título"

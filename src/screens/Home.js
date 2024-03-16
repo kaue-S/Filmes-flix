@@ -8,23 +8,23 @@ import { AntDesign } from "@expo/vector-icons";
 export default function Home({ navigation }) {
   return (
     <SafeContainer>
-      <View style={estilos.viewLogo}>
+      <View style={estilos.header}>
         <Text style={estilos.search}>
           <Ionicons name="menu" size={30} color="white" />
         </Text>
         <Image source={logo} style={estilos.logo} />
-        <Text style={estilos.search}> <Ionicons name="search" size={30} color="white" /></Text>
-      </View>
-
-      <View style={estilos.viewBotoes}>
+        
         <Pressable
           style={estilos.botao}
           onPress={() => navigation.navigate("Buscar Filmes")}
         >
           <Text style={estilos.textoBotao}>
-            <Ionicons name="search" size={18} color="white" /> Buscar Filmes
+            <Ionicons name="search" size={30} color="white" />
           </Text>
         </Pressable>
+      </View>
+
+      <View style={estilos.viewBotoes}>
         <Pressable style={estilos.botao}>
           <Text style={estilos.textoBotao} onPress={() => navigation.navigate("Favoritos")}>
             <AntDesign name="heart" size={16} color="white" /> Favoritos
@@ -46,7 +46,7 @@ export default function Home({ navigation }) {
           style={estilos.botaoRodape}
           onPress={() => navigation.navigate("Sobre")}
         >
-          <Text style={estilos.textoBotao}>
+          <Text>
             <Ionicons name="information-circle" size={16} color={"white"} />{" "}
             Sobre
           </Text>
@@ -57,21 +57,17 @@ export default function Home({ navigation }) {
 }
 
 const estilos = StyleSheet.create({
-  viewLogo: {
-    flex: 1,
-    backgroundColor: "#252525",
-    justifyContent: "flex-end",
-    alignItems: "start",
-    paddingBottom: 15,
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
-
-  search: {
-    paddingTop: 4,
-  },  
+  header: {
+  height: 60,
+  backgroundColor: "#252525",
+  flexDirection: "row",
+  alignItems: "center",
+  justifyContent: "space-between",
+  borderColor: "white",
+  }, 
 
   logo: {
+    marginTop: 16,
     width: 150,
     height: 60,
   },
@@ -83,12 +79,6 @@ const estilos = StyleSheet.create({
     alignItems: "center",
   },
 
-  botao: {
-    borderRadius: 5,
-    padding: 16,
-    backgroundColor: "#5451a6",
-    justifyContent: "space-between",
-  },
 
   textoBotao: {
     fontFamily: "Mulish",

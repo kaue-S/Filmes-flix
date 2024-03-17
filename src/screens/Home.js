@@ -4,6 +4,7 @@ import SafeContainer from "../components/SafeContainer";
 import logo from "../../assets/images/logo.png";
 import { Ionicons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
+import Destaques from "./Destaques";
 
 export default function Home({ navigation }) {
   return (
@@ -22,6 +23,10 @@ export default function Home({ navigation }) {
             <Ionicons name="search" size={30} color="white" />
           </Text>
         </Pressable>
+      </View>
+
+      <View>
+        <Destaques />
       </View>
 
       <View style={estilos.viewBotoes}>
@@ -68,7 +73,7 @@ const estilos = StyleSheet.create({
 
   logo: {
     marginTop: 16,
-    width: 150,
+    width: 120,
     height: 60,
   },
 

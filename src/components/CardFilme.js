@@ -6,6 +6,7 @@ import {
   View,
   Vibration,
   Alert,
+  ScrollView,
 } from "react-native";
 import imagemAlternativa from "../../assets/images/foto-alternativa.jpg";
 import { FontAwesome5 } from "@expo/vector-icons";
@@ -67,6 +68,7 @@ export default function CardFilme({ filme }) {
   };
 
   return (
+    <ScrollView horizontal={true}>
     <View style={estilos.card}>
       <Image
         style={estilos.imagem}
@@ -97,10 +99,12 @@ export default function CardFilme({ filme }) {
         </View>
       </View>
     </View>
+    </ScrollView>
   );
 }
 
 const estilos = StyleSheet.create({
+
   card: {
     marginVertical: 4,
     borderWidth: 2,

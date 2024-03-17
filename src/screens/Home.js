@@ -25,7 +25,7 @@ export default function Home({ navigation }) {
         </Pressable>
       </View>
 
-      <View>
+      <View style={estilos.destaques}>
         <Destaques />
       </View>
 
@@ -100,4 +100,10 @@ const estilos = StyleSheet.create({
     flex: 0.2,
     paddingHorizontal: 20,
   },
+
+  destaques: {
+    flex: 1,
+    borderWidth: 2,
+    borderColor: "white",
+  }
 });

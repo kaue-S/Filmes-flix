@@ -6,10 +6,9 @@ import { FlatList, View } from "react-native";
 import CardFilme from "../components/CardFilme";
 
 
-export default function Destaques({route}){
+export default function Destaques(){
     const [resultados, setResultados] = useState([]);
-
-     const { filme } = route.params;
+    
     
     useEffect(() => {
         async function destaqueSemana(){
@@ -18,13 +17,12 @@ export default function Destaques({route}){
                     params: {
                         include_adult: false,
                         language: "pt-BR",
-                        query: filme,
                         api_key: apiKey,
                       },
                 });
 
                 setResultados(resposta.data.results)
-                console.log(resposta)
+                
 
             } catch (error) {
                 console.error("Deu ruim: " + error.message);
@@ -36,17 +34,19 @@ export default function Destaques({route}){
 
     return(
         <SafeContainer>
-            <View>
-            <FlatList
-              data={resultados}
-              keyExtractor={(item) => item.id}
-              renderItem={({ item }) => {
-                return <CardFilme filme={item} />;
-              }}
-             
-            />
-          </View>
+            { 
+                <View>
+                    <FlatList
+                    data={resultados}
+                    keyExtractor={(item) => item.id}
+                    renderItem={({ item }) => {
+                        return <CardFilme filme={item} />;
+                    }}
+                    
+                    />
+            </View>
+          }
         </SafeContainer>
-    )
+    );
 
 }

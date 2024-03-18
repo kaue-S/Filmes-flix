@@ -2,11 +2,12 @@ import { useEffect } from "react";
 import { api, apiKey } from "../services/api-moviedb";
 import { useState } from "react";
 import SafeContainer from "../components/SafeContainer";
-import { FlatList, View, Text, Image, StyleSheet, ScrollView } from "react-native";
-import CardFilme from "../components/CardFilme";
+import { FlatList, View, Image, StyleSheet, Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Destaques() {
   const [resultados, setResultados] = useState([]);
+  const navigation = useNavigation();
 
   useEffect(() => {
     async function destaqueSemana() {
@@ -32,20 +33,30 @@ export default function Destaques() {
     <SafeContainer>
       {
         <View style={estilos.destaques}>
-          <FlatList horizontal={true}
-            
+          <FlatList
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
             data={resultados}
             keyExtractor={(item) => item.id}
             renderItem={({ item }) => {
               return (
-                
-                <View style={estilos.cardDestaques}>
-                  <Image style={estilos.imagem} source={{ uri: `https://image.tmdb.org/t/p/w500/${item.poster_path}` }} />
-                </View>
-
-                );
+                <Pressable
+                  onPress={() => {
+                    navigation.navigate("Detalhes", { filme: item });
+                  }}
+                >
+                  <View style={estilos.cardDestaques}>
+                    <Image
+                      style={estilos.imagem}
+                      source={{
+                        uri: `https://image.tmdb.org/t/p/w500/${item.poster_path}`,
+                      }}
+                    />
+                  </View>
+                </Pressable>
+              );
             }}
-        />
+          />
         </View>
       }
     </SafeContainer>
@@ -53,20 +64,20 @@ export default function Destaques() {
 }
 
 const estilos = StyleSheet.create({
-    destaques: {
-        // borderColor: "red",
-        // borderWidth: 4,
-       width: "auto",
-    },
-    
-    cardDestaques:{
-        marginHorizontal: 15,
-        borderRadius: 30,
-    },
+  destaques: {
+    // borderColor: "red",
+    // borderWidth: 4,
+    width: "auto",
+  },
 
-    imagem: {
-        borderRadius: 30,
-        height: 300,
-        width: 200,
-    },
+  cardDestaques: {
+    marginHorizontal: 15,
+    borderRadius: 30,
+  },
+
+  imagem: {
+    borderRadius: 30,
+    height: 300,
+    width: 200,
+  },
 });

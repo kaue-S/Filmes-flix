@@ -109,12 +109,12 @@ const estilos = StyleSheet.create({
   },
 
   textoDestaques: {
-    marginVertical: 8,
+    marginVertical: 16,
     paddingLeft: 16,
     fontFamily: "Mulish",
     fontWeight: "bold",
     fontSize: 16,
     color: "#ffff",
     
-  }
+  },
 });

@@ -4,7 +4,7 @@ import React from "react";
 export default function Loading() {
   return (
     <View style={estilos.viewLoading}>
-      <ActivityIndicator size="large" color="#5451ad" />
+      <ActivityIndicator size="large" color="#fad540" />
     </View>
   );
 }

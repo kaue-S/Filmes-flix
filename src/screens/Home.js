@@ -26,6 +26,7 @@ export default function Home({ navigation }) {
       </View>
 
       <View style={estilos.destaques}>
+      <Text style={estilos.textoDestaques}>Destaques da Semana</Text>
         <Destaques />
       </View>
 
@@ -63,6 +64,7 @@ export default function Home({ navigation }) {
 
 const estilos = StyleSheet.create({
   header: {
+  paddingHorizontal: 16,
   height: 60,
   backgroundColor: "#252525",
   flexDirection: "row",
@@ -102,8 +104,17 @@ const estilos = StyleSheet.create({
   },
 
   destaques: {
-    flex: 1,
-    borderWidth: 2,
-    borderColor: "white",
+    marginTop: 20,
+    height: 350,
+  },
+
+  textoDestaques: {
+    marginVertical: 8,
+    paddingLeft: 16,
+    fontFamily: "Mulish",
+    fontWeight: "bold",
+    fontSize: 16,
+    color: "#ffff",
+    
   }
 });

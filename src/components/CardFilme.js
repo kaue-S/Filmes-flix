@@ -68,7 +68,7 @@ export default function CardFilme({ filme }) {
   };
 
   return (
-    <ScrollView horizontal={true}>
+    <ScrollView >
     <View style={estilos.card}>
       <Image
         style={estilos.imagem}

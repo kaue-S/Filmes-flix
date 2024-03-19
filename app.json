@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "Filmes Flix",
-    "slug": "filmes-flix",
-    "version": "1.0.0",
+    "name": "Filmes Flix 2024",
+    "slug": "filmes-flix-2024",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/images/logo.png",
     "userInterfaceStyle": "light",
@@ -11,7 +11,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#00000"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
@@ -22,10 +24,12 @@
       },
       "package": "com.kaueacenar.filmesflix"
     },
-    "plugins": ["expo-font"],
+    "plugins": [
+      "expo-font"
+    ],
     "extra": {
       "eas": {
-        "projectId": "566291b0-2d5a-47f9-bf85-1fbee91ca116"
+        "projectId": "13d58f34-4a0e-41fd-8da7-332809de5f77"
       }
     },
     "owner": "kaueacenar"

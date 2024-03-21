@@ -52,7 +52,7 @@ export default function Home({ navigation }) {
           style={estilos.botaoRodape}
           onPress={() => navigation.navigate("Sobre")}
         >
-          <Text>
+          <Text style={estilos.textoBotao}>
             <Ionicons name="information-circle" size={16} color={"white"} />{" "}
             Sobre
           </Text>
